@@ -37,7 +37,7 @@ fn raw_key_bindings() -> HashMap<String, Box<dyn KeyEventHandler<RustConn>>> {
         "M-S-Right" => send_layout_message(|| ExpandMain),
         "M-S-Left" => send_layout_message(|| ShrinkMain),
         "M-semicolon" => spawn("dmenu_run"),
-        "M-Return" => spawn("/usr/bin/kgx"),
+        "M-Return" => spawn("kgx"),
         "M-A" => exit(),
     };
 
@@ -59,7 +59,7 @@ fn raw_key_bindings() -> HashMap<String, Box<dyn KeyEventHandler<RustConn>>> {
 
 fn main() -> Result<()> {
     tracing_subscriber::fmt()
-        .with_env_filter("info")
+        .with_env_filter("trace")
         .finish()
         .init();
 

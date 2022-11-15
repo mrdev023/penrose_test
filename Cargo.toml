@@ -5,6 +5,15 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[[bin]]
+doc = false
+name = "my_penrose_config"
+path = "src/main.rs"
+
 [dependencies]
+anyhow = "1.0.66"
+clap = "4.0.18"
 penrose = "0.3.1"
-tracing-subscriber = { version = "0.3.16", features = ["env-filter"] }
+penrose_ui = "0.1.1"
+tracing = "0.1.37"
+tracing-subscriber = { version = "0.3.16", features = ["env-filter", "json"] }
